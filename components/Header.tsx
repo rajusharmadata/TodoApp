@@ -17,7 +17,7 @@ const Header = () => {
   // if todos is exits then find the length when todos is not exits then return the zero
   const totalCount = todos ? (todos.length) : 0;
   // finding the progress precentage
-  const progressPercentage = totalCount > 0 ? (totalCount / completedCount)*100 : (0);
+  const progressPercentage = totalCount > 0 ? (completedCount / totalCount)*100 : (0);
   return (
     <View style={homeStyle.header}>
       <View style={homeStyle.titleContainer}>
@@ -32,7 +32,7 @@ const Header = () => {
           </Text>
         </View>
       </View>
-      (
+    
         <View style={homeStyle.progressContainer}>
           <View style={homeStyle.progressBarContainer}>
             <View style={homeStyle.progressBar}>
@@ -44,7 +44,7 @@ const Header = () => {
             <Text style={homeStyle.progressText}>{Math.round(progressPercentage)}%</Text>
           </View>
         </View>
-      
+
     </View>
   );
 }
