@@ -15,14 +15,18 @@ const TabsLayout = () => {
           backgroundColor: colors.surface,
           borderTopWidth: 1,
           borderTopColor: colors.border,
-          height: 90,
-          padding: 30,
-          paddingTop: 20,
-          paddingBottom: 10,
+          height: 80,
+          paddingHorizontal: 16,
+          paddingTop: 8,
+          paddingBottom: 16,
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: '600',
+          marginTop: 4,
+        },
+        tabBarIconStyle: {
+          marginBottom: 0,
         },
         headerShown: false,
       }}
@@ -43,10 +47,8 @@ const TabsLayout = () => {
           tabBarIcon: ({ color, size }) => <Ionicons name="settings" size={size} color={color} />,
         }}
       />
-
     </Tabs>
   );
 }
 
 export default TabsLayout
-

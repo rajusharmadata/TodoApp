@@ -33,25 +33,25 @@ export interface ColorScheme {
 }
 
 const lightColors: ColorScheme = {
-  bg: '#f8fafc',
+  bg: '#fafbfc',
   surface: '#ffffff',
-  text: '#1e293b',
-  textMuted: '#64748b',
+  text: '#1a202c',
+  textMuted: '#4a5568',
   border: '#e2e8f0',
-  primary: '#3b82f6',
-  success: '#10b981',
-  warning: '#f59e0b',
-  danger: '#ef4444',
+  primary: '#4f46e5',
+  success: '#059669',
+  warning: '#d97706',
+  danger: '#dc2626',
   shadow: '#000000',
   gradients: {
-    background: ['#f8fafc', '#e2e8f0'],
-    surface: ['#ffffff', '#f8fafc'],
-    primary: ['#3b82f6', '#1d4ed8'],
-    success: ['#10b981', '#059669'],
-    warning: ['#f59e0b', '#d97706'],
-    danger: ['#ef4444', '#dc2626'],
-    muted: ['#9ca3af', '#6b7280'],
-    empty: ['#f3f4f6', '#e5e7eb'],
+    background: ['#fafbfc', '#f7fafc'],
+    surface: ['#ffffff', '#fafbfc'],
+    primary: ['#4f46e5', '#3730a3'],
+    success: ['#059669', '#047857'],
+    warning: ['#d97706', '#b45309'],
+    danger: ['#dc2626', '#b91c1c'],
+    muted: ['#94a3b8', '#64748b'],
+    empty: ['#f8fafc', '#f1f5f9'],
   },
   backgrounds: {
     input: '#ffffff',
@@ -61,29 +61,29 @@ const lightColors: ColorScheme = {
 };
 
 const darkColors: ColorScheme = {
-  bg: '#0f172a',
-  surface: '#1e293b',
-  text: '#f1f5f9',
-  textMuted: '#94a3b8',
-  border: '#334155',
-  primary: '#60a5fa',
-  success: '#34d399',
-  warning: '#fbbf24',
-  danger: '#f87171',
+  bg: '#0a0e1a',
+  surface: '#1a1f2e',
+  text: '#f8fafc',
+  textMuted: '#a1a8b0',
+  border: '#2d3748',
+  primary: '#6366f1',
+  success: '#10b981',
+  warning: '#f59e0b',
+  danger: '#f56565',
   shadow: '#000000',
   gradients: {
-    background: ['#0f172a', '#1e293b'],
-    surface: ['#1e293b', '#334155'],
-    primary: ['#3b82f6', '#1d4ed8'],
-    success: ['#10b981', '#059669'],
+    background: ['#0a0e1a', '#1a1f2e'],
+    surface: ['#1a1f2e', '#2d3748'],
+    primary: ['#6366f1', '#4338ca'],
+    success: ['#10b981', '#047857'],
     warning: ['#f59e0b', '#d97706'],
-    danger: ['#ef4444', '#dc2626'],
-    muted: ['#374151', '#4b5563'],
-    empty: ['#374151', '#4b5563'],
+    danger: ['#f56565', '#e53e3e'],
+    muted: ['#4a5568', '#2d3748'],
+    empty: ['#2d3748', '#4a5568'],
   },
   backgrounds: {
-    input: '#1e293b',
-    editInput: '#0f172a',
+    input: '#1a1f2e',
+    editInput: '#0a0e1a',
   },
   statusBarStyle: 'light-content' as const,
 };
@@ -99,7 +99,7 @@ const ThemeContext = createContext<undefined | ThemeContextType>(undefined)
   // check the type which is wrong and write
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  // when page is load at first time the it is recode it 
+  // when page is load at first time the it is recode it
   useEffect(() => {
     // setIsDarkMode default
      AsyncStorage.getItem('isDarkMode').then(value => {
